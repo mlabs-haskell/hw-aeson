@@ -135,7 +135,7 @@ toAscList :: KeyMap v -> [(Key, v)]
 toAscList = M.toList . toMap
 
 elems :: KeyMap v -> [v]
-elems = KM.elems
+elems = (snd <$>) . toList
 
 fromHashMap :: HashMap Key v -> KeyMap v
 fromHashMap = KM.fromHashMap
